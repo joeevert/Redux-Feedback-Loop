@@ -30,6 +30,7 @@ class App extends Component {
                   <li><Link to="/complete">complete</Link></li>
                 </ul>
               </nav> */}
+              
               <Route path="/v1feeling" component= {HowAreYouFeeling} />
               <Route path="/v2understand" component= {DidYouUnderstand} />
               <Route path="/v3support" component= {Supported} />

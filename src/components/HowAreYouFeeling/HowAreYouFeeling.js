@@ -27,7 +27,11 @@ class HowAreYouFeeling extends Component {
     return (
         <div>
             <h1>How are you feeling?</h1>
-            <input type="number" onChange={this.handleChange} value={this.state.feeling}/><br />
+            <input 
+              type="number"
+              onChange={this.handleChange} 
+              value={this.state.feeling}
+            /><br />
             <button onClick={this.handleClick}>NEXT</button>
         </div>
     );

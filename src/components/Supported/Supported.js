@@ -27,7 +27,11 @@ class Supported extends Component {
     return (
         <div>
             <h1>How well are you being supported?</h1>
-            <input type="number" onChange={this.handleChange} value={this.state.support}/><br />
+            <input 
+              type="number" 
+              onChange={this.handleChange} 
+              value={this.state.support}
+            /><br />
             <button onClick={this.handleClick}>NEXT</button>
         </div>
     );

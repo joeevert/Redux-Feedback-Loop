@@ -26,7 +26,11 @@ class Comments extends Component {
     return (
         <div>
             <h1>Any comments you want to leave?</h1>
-            <input type="text" onChange={this.handleChange} value={this.state.comments}/><br />
+            <input 
+              type="text" 
+              onChange={this.handleChange} 
+              value={this.state.comments}
+            /><br />
             <button onClick={this.handleClick}>SUBMIT</button>
         </div>
     );

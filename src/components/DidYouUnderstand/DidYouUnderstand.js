@@ -27,7 +27,11 @@ class DidYouUnderstand extends Component {
     return (
         <div>
             <h1>How well are you understanding the content?</h1>
-            <input type="number" onChange={this.handleChange} value={this.state.understanding}/><br />
+            <input 
+              type="number" 
+              onChange={this.handleChange} 
+              value={this.state.understanding}
+            /><br />
             <button onClick={this.handleClick}>NEXT</button>
         </div>
     );
