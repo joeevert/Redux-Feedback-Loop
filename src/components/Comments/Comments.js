@@ -8,14 +8,14 @@ class Comments extends Component {
 
   // click handler for SUBMIT button - will proceed to complete (view #4)
   handleClick = () => {
-    console.log('in handleClick, understanding');
+    console.log('in handleClick, comments');
     this.props.dispatch( {type: 'ADD_COMMENTS', payload: this.state} );
     this.props.history.push('/v5complete');
   }
 
   // change handler for input
   handleChange = (event) => {
-    console.log('in handleChange, understanding:', event.target.value);
+    console.log('in handleChange, comments:', event.target.value);
     this.setState({
       ...this.state,
       comments: event.target.value
