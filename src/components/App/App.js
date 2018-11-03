@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { connect } from 'react-redux';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import HowAreYouFeeling from '../HowAreYouFeeling/HowAreYouFeeling';
@@ -9,7 +10,7 @@ import DidYouUnderstand from '../DidYouUnderstand/DidYouUnderstand';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Complete from '../Complete/Complete';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import Admin from '../Admin/Admin';
 // import { Link } from 'react-router-dom';
 
 
@@ -34,6 +35,8 @@ class App extends Component {
               <Route path="/v3support" component= {Supported} />
               <Route path="/v4comments" component= {Comments} />
               <Route path="/v5complete" component= {Complete} />
+              <Route path="/admin" component= {Admin} />
+
           </div>
       </Router>
       </div>

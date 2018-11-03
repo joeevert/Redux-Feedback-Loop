@@ -17,3 +17,32 @@
   font-size: large;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #ddd;
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+}
+
+td {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+tr:hover {
+  background-color: #ffff00;
+}
