@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
+
 
 class Comments extends Component {
   state = {
@@ -11,6 +13,7 @@ class Comments extends Component {
     console.log('in handleClick, comments');
     this.props.dispatch( {type: 'ADD_COMMENTS', payload: this.state} );
     this.props.history.push('/v5complete');
+    this.sendFeedback();
   }
 
   // change handler for input
@@ -20,6 +23,22 @@ class Comments extends Component {
       ...this.state,
       comments: event.target.value
     });
+  }
+
+  // POST to db - called in handleClick
+  sendFeedback = () => {
+    console.log('in sendFeedback');
+    axios({
+      method: 'POST',
+      url: '/api/feedback',
+      data: this.props.reduxState.feedbackReducer
+    })
+    .then((response) => {
+      console.log('sending feedback to db', response);
+    })
+    .catch((error) => {
+      console.log('error sending feedback', error);
+    })
   }
 
   render() {
