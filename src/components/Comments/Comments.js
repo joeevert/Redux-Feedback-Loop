@@ -1,15 +1,38 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Comments extends Component {
+  state = {
+    comments: '',
+  }
+
+  // click handler for SUBMIT button - will proceed to complete (view #4)
+  handleClick = () => {
+    console.log('in handleClick, understanding');
+    this.props.dispatch( {type: 'ADD_COMMENTS', payload: this.state} );
+    this.props.history.push('/v5complete');
+  }
+
+  // change handler for input
+  handleChange = (event) => {
+    console.log('in handleChange, understanding:', event.target.value);
+    this.setState({
+      ...this.state,
+      comments: event.target.value
+    });
+  }
+
   render() {
     return (
         <div>
             <h1>Any comments you want to leave?</h1>
-            <input placeholder="answer"/><br />
-            <button>SUBMIT</button>
+            <input type="text" onChange={this.handleChange} value={this.state.comments}/><br />
+            <button onClick={this.handleClick}>SUBMIT</button>
         </div>
     );
   }
 }
 
-export default Comments;
+const mapStateToProps = ( reduxState ) => ( { reduxState } );
+
+export default connect(mapStateToProps)(Comments);
