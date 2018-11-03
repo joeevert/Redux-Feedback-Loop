@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import { connect } from 'react-redux';
+
 import Header from '../Header/Header';
 import HowAreYouFeeling from '../HowAreYouFeeling/HowAreYouFeeling';
 import DidYouUnderstand from '../DidYouUnderstand/DidYouUnderstand';
@@ -39,4 +41,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);
