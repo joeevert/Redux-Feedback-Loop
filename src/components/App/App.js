@@ -7,7 +7,9 @@ import DidYouUnderstand from '../DidYouUnderstand/DidYouUnderstand';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Complete from '../Complete/Complete';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+
 
 class App extends Component {
   render() {
@@ -16,7 +18,7 @@ class App extends Component {
         <Header />
         <Router>
           <div className="App">
-              <nav>
+              {/* <nav>
                 <ul>
                   <li><Link to="/feeling">feeling</Link></li>
                   <li><Link to="/understand">understand</Link></li>
@@ -24,12 +26,12 @@ class App extends Component {
                   <li><Link to="/comments">comments</Link></li>
                   <li><Link to="/complete">complete</Link></li>
                 </ul>
-              </nav>
-              <Route path="/feeling" component= {HowAreYouFeeling} />
-              <Route path="/understand" component= {DidYouUnderstand} />
-              <Route path="/support" component= {Supported} />
-              <Route path="/comments" component= {Comments} />
-              <Route path="/complete" component= {Complete} />
+              </nav> */}
+              <Route path="/v1feeling" component= {HowAreYouFeeling} />
+              <Route path="/v2understand" component= {DidYouUnderstand} />
+              <Route path="/v3support" component= {Supported} />
+              <Route path="/v4comments" component= {Comments} />
+              <Route path="/v5complete" component= {Complete} />
           </div>
       </Router>
       </div>
