@@ -11,7 +11,7 @@ class Admin extends Component {
   getFeedback = () => {
     axios({
       method: 'GET',
-      url: '/api/feedback'
+      url: '/feedback'
     }).then((response) => {
       console.log('response',response.data);
       this.setState({
@@ -29,7 +29,7 @@ class Admin extends Component {
   render() {
     return (
         <div>
-            <h1>Feedback Results</h1>
+            <h3>Feedback Results</h3>
             <table>
                 <thead>    
                     <tr>

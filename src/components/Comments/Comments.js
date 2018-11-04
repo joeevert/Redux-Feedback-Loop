@@ -46,7 +46,8 @@ class Comments extends Component {
   render() {
     return (
       <div>
-          <h1>Any comments you want to leave?</h1>
+          <h4>4 of 4 pages</h4>
+          <h3>Any comments you want to leave?</h3>
           <form onSubmit={this.handleClick}>
             <input 
               type="text"

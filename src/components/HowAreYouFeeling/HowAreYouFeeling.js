@@ -27,7 +27,8 @@ class HowAreYouFeeling extends Component {
   render() {
     return (
       <div>
-        <h1>How are you feeling?</h1>
+        <h4>1 of 4 pages</h4>
+        <h3>How are you feeling?</h3>
         <form onSubmit={this.handleClick}>
           <input 
             type="number"

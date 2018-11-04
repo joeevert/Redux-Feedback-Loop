@@ -27,7 +27,8 @@ class DidYouUnderstand extends Component {
   render() {
     return (
       <div>
-        <h1>How well are you understanding the content?</h1>
+        <h4>2 of 4 pages</h4>
+        <h3>How well are you understanding the content?</h3>
         <form onSubmit={this.handleClick}>
           <input 
             type="number"

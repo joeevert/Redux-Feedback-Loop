@@ -11,7 +11,7 @@ class Complete extends Component {
   render() {
     return (
         <div>
-            <h1>Thank You!</h1>
+            <h3>Thank You!</h3>
             <button onClick={this.handleClick}>Leave New Feedback</button>
         </div>
     );

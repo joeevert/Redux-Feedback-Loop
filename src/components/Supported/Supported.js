@@ -27,7 +27,8 @@ class Supported extends Component {
   render() {
     return (
         <div>
-          <h1>How well are you being supported?</h1>
+          <h4>3 of 4 pages</h4>
+          <h3>How well are you being supported?</h3>
           <form onSubmit={this.handleClick}>
             <input 
               type="number"
