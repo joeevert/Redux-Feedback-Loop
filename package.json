@@ -7,12 +7,14 @@
     "axios": "^0.17.1",
     "pg": "^7.4.1",
     "react": "^16.2.0",
+    "react-confirm-alert": "^2.0.6",
     "react-dom": "^16.2.0",
     "react-redux": "^5.1.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.1",
     "redux": "^4.0.1",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.5"
