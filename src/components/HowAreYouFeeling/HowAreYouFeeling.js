@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// Material-UI
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+
 class HowAreYouFeeling extends Component {
 
   state = {
@@ -30,14 +35,18 @@ class HowAreYouFeeling extends Component {
         <h4>1 of 4 pages</h4>
         <h3>How are you feeling?</h3>
         <form onSubmit={this.handleClick}>
-          <input 
+          <TextField 
             type="number"
             name="feeling"
             required
             onChange={this.handleChange} 
             value={this.state.feeling}
-          />
-          <input type="submit" value="NEXT" />
+          /><br />
+          {/* <TextField type="submit" value="NEXT" /> */}
+          <Button type="submit">
+            NEXT
+            <Icon>arrow_forward</Icon>
+          </Button>
         </form>
       </div>
     );

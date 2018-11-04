@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
+// Material-UI
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 
 class Comments extends Component {
   state = {
@@ -50,14 +54,18 @@ class Comments extends Component {
           <h4>4 of 4 pages</h4>
           <h3>Any comments you want to leave?</h3>
           <form onSubmit={this.handleClick}>
-            <input 
+            <TextField 
               type="text"
               name="comments"
               required
               onChange={this.handleChange} 
               value={this.state.comments}
-            />
-            <input type="submit" value="SUBMIT"/>
+            /><br />
+            {/* <input type="submit" value="SUBMIT"/> */}
+            <Button type="submit">
+              SUBMIT
+              <Icon>done_all</Icon>
+            </Button>
           </form>  
         </div>
     );
