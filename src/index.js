@@ -9,7 +9,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const feedbackReducer = (state={feeling: '', understanding: '', support: '', comments: ''}, action) => {
+const feedbackReducer = (state = {feeling: '', understanding: '', support: '', comments: ''}, action) => {
     // switch statement to check what action was dispatched for feedback inputs
     switch (action.type) {
         case 'ADD_FEELING':
@@ -31,6 +31,16 @@ const feedbackReducer = (state={feeling: '', understanding: '', support: '', com
             console.log('in ADD_COMMENTS', action.payload);
             // state = { ...state, ...action.payload }
             state.comments = action.payload.comments
+            break;
+        case 'RESET_STATE':
+            console.log('in RESET_STATE');
+            // state = { ...state, ...action.payload }
+            state = {
+                feeling: '', 
+                understanding: '', 
+                support: '', 
+                comments: ''
+            } 
             break;
         default:
             return state;

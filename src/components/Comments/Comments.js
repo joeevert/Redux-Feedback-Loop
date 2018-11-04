@@ -36,6 +36,7 @@ class Comments extends Component {
       data: this.props.reduxState.feedbackReducer
     })
     .then((response) => {
+      this.props.dispatch( { type: 'RESET_STATE' } );
       console.log('sending feedback to db', response.data);
     })
     .catch((error) => {
