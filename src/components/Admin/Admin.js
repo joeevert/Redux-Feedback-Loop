@@ -75,7 +75,7 @@ class Admin extends Component {
       else {
           swal('The feedback remains!');
       } // end else
-     a});
+    });
   } // end deleteFeedbackSwal
 
 
