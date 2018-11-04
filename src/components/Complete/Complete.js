@@ -5,7 +5,7 @@ class Complete extends Component {
   // click handler for Leave New Feedback button - will proceed to 'how are you feeling?' (view #1)
   handleClick = () => {
     console.log('in handleClick, Leave New Feedback');
-    this.props.history.push('/v1feeling');
+    this.props.history.push('/');
   }
 
   render() {

@@ -21,23 +21,12 @@ class App extends Component {
         <Header />
         <Router>
           <div className="App">
-              {/* <nav>
-                <ul>
-                  <li><Link to="/feeling">feeling</Link></li>
-                  <li><Link to="/understand">understand</Link></li>
-                  <li><Link to="/support">support</Link></li>
-                  <li><Link to="/comments">comments</Link></li>
-                  <li><Link to="/complete">complete</Link></li>
-                </ul>
-              </nav> */}
-              
-              <Route path="/v1feeling" component= {HowAreYouFeeling} />
-              <Route path="/v2understand" component= {DidYouUnderstand} />
-              <Route path="/v3support" component= {Supported} />
-              <Route path="/v4comments" component= {Comments} />
-              <Route path="/v5complete" component= {Complete} />
-              <Route path="/admin" component= {Admin} />
-
+            <Route exact path="/" component= {HowAreYouFeeling} />
+            <Route path="/2" component= {DidYouUnderstand} />
+            <Route path="/3" component= {Supported} />
+            <Route path="/4" component= {Comments} />
+            <Route path="/5" component= {Complete} />
+            <Route path="/admin" component= {Admin} />
           </div>
       </Router>
       </div>

@@ -8,10 +8,11 @@ class HowAreYouFeeling extends Component {
   }
 
   // click handler for NEXT button - will proceed to understand (view #2)
-  handleClick = () => {
+  handleClick = (event) => {
+    event.preventDefault();
     console.log('in handleClick, feeling');
     this.props.dispatch( {type: 'ADD_FEELING', payload: this.state} );
-    this.props.history.push('/v2understand');
+    this.props.history.push('/2');
   }
 
   // change handler for input
@@ -25,15 +26,19 @@ class HowAreYouFeeling extends Component {
 
   render() {
     return (
-        <div>
-            <h1>How are you feeling?</h1>
-            <input 
-              type="number"
-              onChange={this.handleChange} 
-              value={this.state.feeling}
-            /><br />
-            <button onClick={this.handleClick}>NEXT</button>
-        </div>
+      <div>
+        <h1>How are you feeling?</h1>
+        <form onSubmit={this.handleClick}>
+          <input 
+            type="number"
+            name="feeling"
+            required
+            onChange={this.handleChange} 
+            value={this.state.feeling}
+          />
+          <input type="submit" value="NEXT" />
+        </form>
+      </div>
     );
   }
 }

@@ -8,10 +8,11 @@ class DidYouUnderstand extends Component {
   }
 
   // click handler for NEXT button - will proceed to support (view #3)
-  handleClick = () => {
+  handleClick = (event) => {
+    event.preventDefault();
     console.log('in handleClick, understanding');
     this.props.dispatch( {type: 'ADD_UNDERSTANDING', payload: this.state} );
-    this.props.history.push('/v3support');
+    this.props.history.push('/3');
   }
 
   // change handler for input
@@ -25,15 +26,19 @@ class DidYouUnderstand extends Component {
 
   render() {
     return (
-        <div>
-            <h1>How well are you understanding the content?</h1>
-            <input 
-              type="number" 
-              onChange={this.handleChange} 
-              value={this.state.understanding}
-            /><br />
-            <button onClick={this.handleClick}>NEXT</button>
-        </div>
+      <div>
+        <h1>How well are you understanding the content?</h1>
+        <form onSubmit={this.handleClick}>
+          <input 
+            type="number"
+            name="understanding"
+            required 
+            onChange={this.handleChange}
+            value={this.state.understanding}
+          />
+          <input type="submit" value="NEXT"/>
+        </form>
+      </div>
     );
   }
 }

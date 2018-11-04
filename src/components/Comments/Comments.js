@@ -13,7 +13,7 @@ class Comments extends Component {
     event.preventDefault();
     console.log('in handleClick, comments');
     this.props.dispatch( {type: 'ADD_COMMENTS', payload: this.state} );
-    this.props.history.push('/v5complete');
+    this.props.history.push('/5');
     this.sendFeedback();
   }
 
@@ -28,10 +28,11 @@ class Comments extends Component {
 
   // POST to db - called in handleClick
   sendFeedback = () => {
-    console.log('in sendFeedback', this.props.reduxState.feedbackReducer);
+    // let feedback = [this.props.reduxState.feedbackReducer, this.state.comments];
+    // console.log('POST is:', [this.props.reduxState.feedbackReducer, this.state.comments]);
     axios({
       method: 'POST',
-      url: '/api/feedback',
+      url: '/feedback',
       data: this.props.reduxState.feedbackReducer
     })
     .then((response) => {
@@ -44,14 +45,18 @@ class Comments extends Component {
 
   render() {
     return (
-        <div>
-            <h1>Any comments you want to leave?</h1>
+      <div>
+          <h1>Any comments you want to leave?</h1>
+          <form onSubmit={this.handleClick}>
             <input 
-              type="text" 
+              type="text"
+              name="comments"
+              required
               onChange={this.handleChange} 
               value={this.state.comments}
-            /><br />
-            <button onClick={this.handleClick}>SUBMIT</button>
+            />
+            <input type="submit" value="SUBMIT"/>
+          </form>  
         </div>
     );
   }

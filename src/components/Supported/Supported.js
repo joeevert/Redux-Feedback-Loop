@@ -8,10 +8,11 @@ class Supported extends Component {
   }
 
   // click handler for NEXT button - will proceed to comments (view #4)
-  handleClick = () => {
+  handleClick = (event) => {
+    event.preventDefault();
     console.log('in handleClick, support', this.state);
     this.props.dispatch( {type: 'ADD_SUPPORT', payload: this.state} );
-    this.props.history.push('/v4comments');
+    this.props.history.push('/4');
   }
 
   // change handler for input
@@ -26,13 +27,17 @@ class Supported extends Component {
   render() {
     return (
         <div>
-            <h1>How well are you being supported?</h1>
+          <h1>How well are you being supported?</h1>
+          <form onSubmit={this.handleClick}>
             <input 
-              type="number" 
+              type="number"
+              name="support"
+              required
               onChange={this.handleChange} 
               value={this.state.support}
-            /><br />
-            <button onClick={this.handleClick}>NEXT</button>
+            />
+            <input type="submit" value="NEXT"/>
+          </form>
         </div>
     );
   }
