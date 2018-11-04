@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         .catch((error) => {
             console.log('Error GET /feedback', error)
             res.sendStatus(500);
-        });
+        })
 })
 
 // POST new feedback
@@ -23,14 +23,30 @@ router.post('/', (req, res) => {
     const sqlText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
                     VALUES ($1, $2, $3, $4);`;
     pool.query(sqlText, [newFeedback.feeling, newFeedback.understanding, newFeedback.support, newFeedback.comments])
-    .then((result) => {
-      console.log('added feedback to db', newFeedback)
-      res.sendStatus(200);
-    })
-    .catch((error) => {
-      console.log('Error POST /feedback', error);
-      res.sendStatus(500);
-    })
-  });
+        .then((result) => {
+            console.log('added feedback to db', newFeedback)
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log('Error POST /feedback', error);
+            res.sendStatus(500);
+        })
+})
+
+// DELETE feedback based on id
+router.delete('/:id', (req, res) => {
+    console.log('DELETE /feedback');
+    const feedbackId = req.params.id;
+    const sqlText = `DELETE FROM "feedback" WHERE id=$1;`;
+    pool.query(sqlText, [feedbackId])
+        .then((result) => {
+            console.log('deleted feedback to db')
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log('Error DELETE /feedback', error);
+            res.sendStatus(500);
+        })
+})
 
 module.exports = router;
