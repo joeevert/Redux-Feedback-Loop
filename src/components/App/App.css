@@ -17,32 +17,32 @@
   font-size: large;
 }
 
-table {
+/* table {
   width: 100%;
   border-collapse: collapse;
-}
+} */
 
-th {
+/* th {
   background-color: #ddd;
   border: 1px solid #000;
   text-align: left;
   padding: 8px;
-}
+} */
 
-td {
+/* td {
   border: 1px solid #000;
   text-align: left;
   padding: 8px;
-}
+} */
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
   background-color: #ddd;
-}
+} */
 
-tr:nth-child(odd) {
+/* tr:nth-child(odd) {
   background-color: #fff;
-}
+} */
 
-tr:hover {
+/* tr:hover {
   background-color: #ffff00;
-}
+} */

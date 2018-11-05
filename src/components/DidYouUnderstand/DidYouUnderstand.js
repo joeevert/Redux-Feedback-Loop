@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// Material-UI
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+
 class DidYouUnderstand extends Component {
 
   state = {
@@ -30,14 +35,18 @@ class DidYouUnderstand extends Component {
         <h4>2 of 4 pages</h4>
         <h3>How well are you understanding the content?</h3>
         <form onSubmit={this.handleClick}>
-          <input 
+          <TextField 
             type="number"
             name="understanding"
             required 
             onChange={this.handleChange}
             value={this.state.understanding}
-          />
-          <input type="submit" value="NEXT"/>
+          /><br />
+          {/* <input type="submit" value="NEXT"/> */}
+          <Button type="submit">
+            NEXT
+            <Icon>arrow_forward</Icon>
+          </Button>
         </form>
       </div>
     );

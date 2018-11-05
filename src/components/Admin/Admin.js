@@ -4,6 +4,43 @@ import axios from 'axios';
 // import 'react-confirm-alert/src/react-confirm-alert.css';
 import swal from 'sweetalert';
 
+// Material-UI
+import { withStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+// import DeleteIcon from '@material-ui/icons/Delete';
+import Icon from '@material-ui/core/Icon';
+import Table from '@material-ui/core/Table';
+import TableHead from '@material-ui/core/TableHead';
+import TableBody from '@material-ui/core/TableBody';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
+
+const CustomTableCell = withStyles(theme => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
+
+const styles = theme => ({
+  root: {
+    width: '100%',
+    marginTop: theme.spacing.unit * 3,
+    overflowX: 'auto',
+  },
+  table: {
+    minWidth: 700,
+  },
+  row: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.background.default,
+    },
+  },
+});
+
 class Admin extends Component {
 
   state = {
@@ -82,32 +119,37 @@ class Admin extends Component {
   render() {
     return (
         <div>
-            <h3>Feedback Results</h3>
-            <table>
-                <thead>    
-                    <tr>
-                        <th>Feeling</th>
-                        <th>Comprehension</th>
-                        <th>Support</th>
-                        <th>Comments</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  {this.state.feedback.map( (submission, index) => 
-                    <tr key={index}>
-                        <td>{submission.feeling}</td>
-                        <td>{submission.understanding}</td>
-                        <td>{submission.support}</td>
-                        <td>{submission.comments}</td>
-                        <td><button onClick={() => this.deleteFeedbackSwal(submission.id)}>DELETE</button></td>
-                    </tr>
-                  )}
-                </tbody>
-            </table>
+          <h3>Feedback Results</h3>
+          <Table>
+            <TableHead>    
+              <TableRow>
+                <CustomTableCell>Feeling</CustomTableCell>
+                <CustomTableCell>Comprehension</CustomTableCell>
+                <CustomTableCell>Support</CustomTableCell>
+                <CustomTableCell>Comments</CustomTableCell>
+                <CustomTableCell>Delete</CustomTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {this.state.feedback.map( (submission, index) => 
+              <TableRow key={index}>
+                <CustomTableCell>{submission.feeling}</CustomTableCell>
+                <CustomTableCell>{submission.understanding}</CustomTableCell>
+                <CustomTableCell>{submission.support}</CustomTableCell>
+                <CustomTableCell>{submission.comments}</CustomTableCell>
+                <CustomTableCell>
+                  <IconButton variant="contained" color="secondary" 
+                    onClick={() => this.deleteFeedbackSwal(submission.id)}>
+                    <Icon>delete_sweep</Icon>
+                  </IconButton>
+                </CustomTableCell>
+              </TableRow>
+              )}
+            </TableBody>
+          </Table>
         </div>
     );
   }
 }
 
-export default Admin;
+export default withStyles(styles)(Admin);

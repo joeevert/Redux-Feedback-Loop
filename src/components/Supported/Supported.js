@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// Material-UI
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+
 class Supported extends Component {
 
   state = {
@@ -30,14 +35,18 @@ class Supported extends Component {
           <h4>3 of 4 pages</h4>
           <h3>How well are you being supported?</h3>
           <form onSubmit={this.handleClick}>
-            <input 
+            <TextField 
               type="number"
               name="support"
               required
               onChange={this.handleChange} 
               value={this.state.support}
-            />
-            <input type="submit" value="NEXT"/>
+            /><br />
+            {/* <input type="submit" value="NEXT"/> */}
+            <Button type="submit">
+              NEXT
+              <Icon>arrow_forward</Icon>
+            </Button>
           </form>
         </div>
     );
