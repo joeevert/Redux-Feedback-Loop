@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import styles from '../muiStyles';
 
 // Material-UI
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 class Comments extends Component {
   state = {
@@ -49,29 +53,30 @@ class Comments extends Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
-      <div>
-          <h4>4 of 4 pages</h4>
-          <h3>Any comments you want to leave?</h3>
-          <form onSubmit={this.handleClick}>
-            <TextField 
-              type="text"
-              name="comments"
-              required
-              onChange={this.handleChange} 
-              value={this.state.comments}
-            /><br />
-            {/* <input type="submit" value="SUBMIT"/> */}
-            <Button type="submit">
-              SUBMIT
-              <Icon>done_all</Icon>
-            </Button>
-          </form>  
-        </div>
+      <Paper className={classes.paper}>
+        <Typography variant='h6'>4 of 4 pages</Typography>
+        <Typography variant='h5'>Any comments you want to leave?</Typography>
+        <form onSubmit={this.handleClick}>
+          <TextField 
+            className={classes.input}
+            type="text"
+            name="comments"
+            required
+            onChange={this.handleChange} 
+            value={this.state.comments}
+          /><br />
+          <Button type="submit">
+            SUBMIT
+            <Icon fontSize='small'>done_all</Icon>
+          </Button>
+        </form>  
+      </Paper>
     );
   }
 }
 
 const mapStateToProps = ( reduxState ) => ( { reduxState } );
 
-export default connect(mapStateToProps)(Comments);
+export default connect(mapStateToProps)(withStyles(styles)(Comments));

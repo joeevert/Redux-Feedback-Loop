@@ -14,18 +14,18 @@ const feedbackReducer = (state = {feeling: '', understanding: '', support: '', c
     switch (action.type) {
         case 'ADD_FEELING':
             console.log('in ADD_FEELING', action.payload);
-            // state = { ...state, ...action.payload }
-            state.feeling = action.payload.feeling
+            state = { ...state, ...action.payload }
+            // state.feeling = action.payload.feeling
             break;
         case 'ADD_UNDERSTANDING':
             console.log('in ADD_UNDERSTANDING', action.payload);
-            // state = { ...state, ...action.payload }
-            state.understanding = action.payload.understanding
+            state = { ...state, ...action.payload }
+            // state.understanding = action.payload.understanding
             break;
         case 'ADD_SUPPORT':
             console.log('in ADD_SUPPORT', action.payload);
-            // state = { ...state, ...action.payload }
-            state.support = action.payload.support
+            state = { ...state, ...action.payload }
+            // state.support = action.payload.support
             break;
         case 'ADD_COMMENTS':
             console.log('in ADD_COMMENTS', action.payload);

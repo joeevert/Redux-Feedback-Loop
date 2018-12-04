@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
+import styles from '../muiStyles';
+
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 class Complete extends Component {
 
@@ -10,13 +16,16 @@ class Complete extends Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
-        <div>
-            <h3>Thank You!</h3>
-            <Button variant="contained" onClick={this.handleClick}>Leave New Feedback</Button>
-        </div>
+      <Paper className={classes.paper}>
+        <Typography variant='h5'>Thank You!</Typography>
+        <Button variant="contained" onClick={this.handleClick}>Leave New Feedback</Button>
+      </Paper>
     );
   }
 }
 
-export default Complete;
+const mapStateToProps = ( reduxState ) => ( { reduxState } );
+
+export default connect(mapStateToProps)(withStyles(styles)(Complete));
