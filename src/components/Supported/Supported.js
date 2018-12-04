@@ -38,7 +38,7 @@ class Supported extends Component {
     const { classes } = this.props;
     return (
       <Paper className={classes.paper}>
-        <Typography variant='h6'>3 of 4 pages</Typography>
+        <Typography variant='h6'>3 of 4</Typography>
         <Typography variant='h5'>How well are you being supported?</Typography>
         <form onSubmit={this.handleClick}>
           <TextField 

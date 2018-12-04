@@ -56,7 +56,7 @@ class Comments extends Component {
     const { classes } = this.props;
     return (
       <Paper className={classes.paper}>
-        <Typography variant='h6'>4 of 4 pages</Typography>
+        <Typography variant='h6'>4 of 4</Typography>
         <Typography variant='h5'>Any comments you want to leave?</Typography>
         <form onSubmit={this.handleClick}>
           <TextField 

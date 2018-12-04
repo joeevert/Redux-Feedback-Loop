@@ -20,7 +20,7 @@ class Complete extends Component {
     return (
       <Paper className={classes.paper}>
         <Typography variant='h5'>Thank You!</Typography>
-        <Button variant="contained" onClick={this.handleClick}>Leave New Feedback</Button>
+        <Button className={classes.button} onClick={this.handleClick}>Leave New Feedback</Button>
       </Paper>
     );
   }

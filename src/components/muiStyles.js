@@ -7,6 +7,9 @@ const styles = {
   },
   input: {
     marginBottom: '25px'
+  },
+  button: {
+    marginTop: '25px'
   }
 }
 

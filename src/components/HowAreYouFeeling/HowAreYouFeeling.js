@@ -38,7 +38,7 @@ class HowAreYouFeeling extends Component {
     const { classes } = this.props;
     return (
       <Paper className={classes.paper}>
-        <Typography variant='h6'>1 of 4 pages</Typography>
+        <Typography variant='h6'>1 of 4</Typography>
         <Typography variant='h5'>How are you feeling?</Typography>
         <form onSubmit={this.handleClick}>
           <TextField
