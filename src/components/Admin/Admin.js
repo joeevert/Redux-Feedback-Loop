@@ -25,21 +25,21 @@ const CustomTableCell = withStyles(theme => ({
   },
 }))(TableCell);
 
-const styles = theme => ({
-  root: {
-    width: '100%',
-    marginTop: theme.spacing.unit * 3,
-    overflowX: 'auto',
-  },
-  table: {
-    minWidth: 700,
-  },
-  row: {
-    '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.background.default,
-    },
-  },
-});
+// const styles = theme => ({
+//   root: {
+//     width: '100%',
+//     marginTop: theme.spacing.unit * 3,
+//     overflowX: 'auto',
+//   },
+//   table: {
+//     minWidth: 700,
+//   },
+//   row: {
+//     '&:nth-of-type(odd)': {
+//       backgroundColor: theme.palette.background.default,
+//     },
+//   },
+// });
 
 class Admin extends Component {
 
@@ -52,12 +52,14 @@ class Admin extends Component {
     axios({
       method: 'GET',
       url: '/feedback'
-    }).then((response) => {
+    })
+    .then((response) => {
       console.log('GET response:', response.data);
       this.setState({
         feedback: response.data
-      });
-    }).catch((error) => {
+      })
+    })
+    .catch((error) => {
       console.log('GET error:', error);
     })
   }
@@ -115,41 +117,42 @@ class Admin extends Component {
     });
   } // end deleteFeedbackSwal
 
-
   render() {
     return (
-        <div>
-          <h3>Feedback Results</h3>
-          <Table>
-            <TableHead>    
-              <TableRow>
-                <CustomTableCell>Feeling</CustomTableCell>
-                <CustomTableCell>Comprehension</CustomTableCell>
-                <CustomTableCell>Support</CustomTableCell>
-                <CustomTableCell>Comments</CustomTableCell>
-                <CustomTableCell>Delete</CustomTableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {this.state.feedback.map( (submission, index) => 
-              <TableRow key={index}>
-                <CustomTableCell>{submission.feeling}</CustomTableCell>
-                <CustomTableCell>{submission.understanding}</CustomTableCell>
-                <CustomTableCell>{submission.support}</CustomTableCell>
-                <CustomTableCell>{submission.comments}</CustomTableCell>
-                <CustomTableCell>
-                  <IconButton variant="contained" color="secondary" 
-                    onClick={() => this.deleteFeedbackSwal(submission.id)}>
-                    <Icon>delete_sweep</Icon>
+      <div>
+        <h3>Feedback Results</h3>
+        <Table>
+          <TableHead>    
+            <TableRow>
+              <CustomTableCell>Feeling</CustomTableCell>
+              <CustomTableCell>Comprehension</CustomTableCell>
+              <CustomTableCell>Support</CustomTableCell>
+              <CustomTableCell>Comments</CustomTableCell>
+              <CustomTableCell>Delete</CustomTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {this.state.feedback.map( (submission, index) => 
+            <TableRow key={index}>
+              <CustomTableCell>{submission.feeling}</CustomTableCell>
+              <CustomTableCell>{submission.understanding}</CustomTableCell>
+              <CustomTableCell>{submission.support}</CustomTableCell>
+              <CustomTableCell>{submission.comments}</CustomTableCell>
+              <CustomTableCell>
+                <IconButton variant="contained" color="secondary" 
+                  onClick={() => this.deleteFeedbackSwal(submission.id)}>
+                  <Icon>delete_sweep</Icon>
                   </IconButton>
-                </CustomTableCell>
-              </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </div>
+              </CustomTableCell>
+            </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </div>
     );
   }
 }
 
-export default withStyles(styles)(Admin);
+// export default withStyles(styles)(Admin);
+export default Admin;
+
