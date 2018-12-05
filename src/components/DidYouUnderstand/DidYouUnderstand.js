@@ -48,6 +48,7 @@ class DidYouUnderstand extends Component {
             required 
             onChange={this.handleChange}
             value={this.state.understanding}
+            variant="outlined"
           /><br />
           {/* <input type="submit" value="NEXT"/> */}
           <Button type="submit">

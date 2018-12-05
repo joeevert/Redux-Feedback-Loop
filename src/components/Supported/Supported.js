@@ -48,6 +48,7 @@ class Supported extends Component {
             required
             onChange={this.handleChange} 
             value={this.state.support}
+            variant="outlined"
           /><br />
           {/* <input type="submit" value="NEXT"/> */}
           <Button type="submit">

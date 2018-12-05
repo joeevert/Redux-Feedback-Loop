@@ -12,40 +12,39 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 class Comments extends Component {
-  state = {
-    comments: '',
-  }
+  // state = {
+  //   comments: '',
+  // }
 
-  // click handler for SUBMIT button - will proceed to complete (view #4)
+  // click handler for SUBMIT button
   handleClick = (event) => {
     event.preventDefault();
-    console.log('in handleClick, comments');
-    this.props.dispatch( {type: 'ADD_COMMENTS', payload: this.state} );
-    this.props.history.push('/5');
+    // this.props.dispatch( {type: 'ADD_COMMENTS', payload: this.state} );
     this.sendFeedback();
+    this.props.history.push('/5');
+
   }
 
   // change handler for input
   handleChange = (event) => {
     console.log('in handleChange, comments:', event.target.value);
-    this.setState({
-      ...this.state,
-      comments: event.target.value
-    });
+    this.props.dispatch( {type: 'ADD_COMMENTS', payload: {comments: event.target.value} } );
+    // this.setState({
+    //   ...this.state,
+    //   comments: event.target.value
+    // });
   }
 
-  // POST to db - called in handleClick
+  // POST
   sendFeedback = () => {
-    // let feedback = [this.props.reduxState.feedbackReducer, this.state.comments];
-    // console.log('POST is:', [this.props.reduxState.feedbackReducer, this.state.comments]);
     axios({
       method: 'POST',
       url: '/feedback',
       data: this.props.reduxState.feedbackReducer
     })
     .then((response) => {
-      this.props.dispatch( { type: 'RESET_STATE' } );
       console.log('sending feedback to db', response.data);
+      this.props.dispatch( { type: 'RESET_STATE' } );
     })
     .catch((error) => {
       console.log('error sending feedback', error);
@@ -64,8 +63,11 @@ class Comments extends Component {
             type="text"
             name="comments"
             required
-            onChange={this.handleChange} 
-            value={this.state.comments}
+            onChange={this.handleChange}
+            variant="outlined"
+            multiline
+            rowsMax="5"
+            // value={this.state.comments}
           /><br />
           <Button type="submit">
             SUBMIT

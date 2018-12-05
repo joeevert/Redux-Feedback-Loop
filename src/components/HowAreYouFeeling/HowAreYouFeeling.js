@@ -48,6 +48,7 @@ class HowAreYouFeeling extends Component {
             required
             onChange={this.handleChange} 
             value={this.state.feeling}
+            variant="outlined"
           /><br />
           {/* <TextField type="submit" value="NEXT" /> */}
           <Button type="submit">

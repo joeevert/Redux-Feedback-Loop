@@ -29,8 +29,8 @@ const feedbackReducer = (state = {feeling: '', understanding: '', support: '', c
             break;
         case 'ADD_COMMENTS':
             console.log('in ADD_COMMENTS', action.payload);
-            // state = { ...state, ...action.payload }
-            state.comments = action.payload.comments
+            state = { ...state, ...action.payload }
+            // state.comments = action.payload.comments
             break;
         case 'RESET_STATE':
             console.log('in RESET_STATE');

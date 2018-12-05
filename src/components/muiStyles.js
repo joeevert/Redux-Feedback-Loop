@@ -6,7 +6,9 @@ const styles = {
     backgroundColor: '#EAE6DA'
   },
   input: {
-    marginBottom: '25px'
+    margin: '25px',
+    backgroundColor: '#fff',
+    borderRadius: '5px'
   },
   button: {
     marginTop: '25px'
