@@ -1,4 +1,10 @@
 const styles = {
+  root: {
+    display: 'flex',
+  },
+  formControl: {
+    margin: 'auto'
+  },
   paper: {
     margin: 'auto',
     width: '500px',
@@ -16,3 +22,4 @@ const styles = {
 }
 
 export default styles;
+

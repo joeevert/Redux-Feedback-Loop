@@ -3,11 +3,16 @@ import { connect } from 'react-redux';
 import styles from '../muiStyles';
 
 // mui
-import TextField from '@material-ui/core/TextField';
+// import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 class HowAreYouFeeling extends Component {
@@ -41,7 +46,7 @@ class HowAreYouFeeling extends Component {
         <Typography variant='h6'>1 of 4</Typography>
         <Typography variant='h5'>How are you feeling?</Typography>
         <form onSubmit={this.handleClick}>
-          <TextField
+          {/* <TextField
             className={classes.input}
             type="number"
             name="feeling"
@@ -49,8 +54,48 @@ class HowAreYouFeeling extends Component {
             onChange={this.handleChange} 
             value={this.state.feeling}
             variant="outlined"
-          /><br />
-          {/* <TextField type="submit" value="NEXT" /> */}
+          /><br /> */}
+          <div className={classes.root}>
+            <FormControl component="fieldset" className={classes.formControl}>
+              <RadioGroup
+                name="feeling"
+                value={this.state.feeling}
+                onChange={this.handleChange}
+                row
+              >
+                <FormControlLabel
+                  value="very stressed"
+                  control={<Radio color="primary" />}
+                  label="Very Stressed"
+                  labelPlacement="end"
+                />
+                <FormControlLabel
+                  value="stressed"
+                  control={<Radio color="primary" />}
+                  label="Stressed"
+                  labelPlacement="end"
+                />
+                <FormControlLabel
+                  value="okay"
+                  control={<Radio color="primary" />}
+                  label="Okay"
+                  labelPlacement="end"              
+                />
+                <FormControlLabel
+                  value="good"
+                  control={<Radio color="primary" />}
+                  label="Good"
+                  labelPlacement="end"
+                />
+                <FormControlLabel
+                  value="great"
+                  control={<Radio color="primary" />}
+                  label="Great"
+                  labelPlacement="end"
+                />
+              </RadioGroup>
+            </FormControl>
+          </div>
           <Button variant="outlined" type="submit">
             NEXT
             <Icon fontSize='small'>arrow_forward</Icon>
@@ -60,6 +105,10 @@ class HowAreYouFeeling extends Component {
     );
   }
 }
+
+HowAreYouFeeling.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = ( reduxState ) => ( { reduxState } );
 
