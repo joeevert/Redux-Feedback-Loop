@@ -3,12 +3,12 @@ const styles = {
     display: 'flex',
   },
   formControl: {
-    margin: 'auto'
+    margin: 'auto',
   },
   paper: {
     margin: 'auto',
     width: '500px',
-    padding: '50px',
+    padding: '25px',
     backgroundColor: '#EAE6DA'
   },
   input: {

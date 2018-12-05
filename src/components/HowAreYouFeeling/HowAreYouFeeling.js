@@ -64,32 +64,33 @@ class HowAreYouFeeling extends Component {
                 row
               >
                 <FormControlLabel
+                
                   value="very stressed"
-                  control={<Radio color="primary" />}
+                  control={<Radio color="primary" required/>}
                   label="Very Stressed"
                   labelPlacement="end"
                 />
                 <FormControlLabel
                   value="stressed"
-                  control={<Radio color="primary" />}
+                  control={<Radio color="primary" required/>}
                   label="Stressed"
                   labelPlacement="end"
                 />
                 <FormControlLabel
                   value="okay"
-                  control={<Radio color="primary" />}
+                  control={<Radio color="primary" required/>}
                   label="Okay"
                   labelPlacement="end"              
                 />
                 <FormControlLabel
                   value="good"
-                  control={<Radio color="primary" />}
+                  control={<Radio color="primary" required/>}
                   label="Good"
                   labelPlacement="end"
                 />
                 <FormControlLabel
                   value="great"
-                  control={<Radio color="primary" />}
+                  control={<Radio color="primary" required/>}
                   label="Great"
                   labelPlacement="end"
                 />
