@@ -1,14 +1,14 @@
 # Redux Feedback Loop
 
-The Redux Feedback Loop is an application that allows user's to submit feedback through a multi-part form. After the user has navigated through the form and submitted their feedback, they are routed to a 'Thank You Page' and are able to restart the feedback loop by clicking the 'Leave New Feedback' button. There is also an admin page that can be viewed by navigating to `localhost:3000/#/admin`. Here the user is able to view a table of the feedback submissions and delete an individual feedback submission as well.
+The Redux Feedback Loop is an application that allows user's to submit feedback through a multi-part form. After the user has navigated through the form and submitted their feedback, they are routed to a `Thank You Page` and are able to restart the feedback loop by clicking the `Leave New Feedback` button. There is also an admin page that can be viewed by navigating to `localhost:3000/#/admin`. Here the user is able to view a table of the feedback submissions and delete an individual feedback submission as well.
 
 ## Built With
 
-Javascript
-React
-Redux
-Node.js
-Material UI
+* Javascript
+* React
+* Redux
+* Node.js
+* Material UI
 
 ## Getting Started
 
