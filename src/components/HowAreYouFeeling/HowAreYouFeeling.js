@@ -51,7 +51,7 @@ class HowAreYouFeeling extends Component {
             variant="outlined"
           /><br />
           {/* <TextField type="submit" value="NEXT" /> */}
-          <Button type="submit">
+          <Button variant="outlined" type="submit">
             NEXT
             <Icon fontSize='small'>arrow_forward</Icon>
           </Button>

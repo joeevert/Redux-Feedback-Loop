@@ -51,7 +51,7 @@ class DidYouUnderstand extends Component {
             variant="outlined"
           /><br />
           {/* <input type="submit" value="NEXT"/> */}
-          <Button type="submit">
+          <Button variant="outlined" type="submit">
             NEXT
             <Icon fontSize='small'>arrow_forward</Icon>
           </Button>

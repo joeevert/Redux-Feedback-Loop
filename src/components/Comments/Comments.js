@@ -69,7 +69,7 @@ class Comments extends Component {
             rowsMax="5"
             // value={this.state.comments}
           /><br />
-          <Button type="submit">
+          <Button variant="outlined" type="submit">
             SUBMIT
             <Icon fontSize='small'>done_all</Icon>
           </Button>
