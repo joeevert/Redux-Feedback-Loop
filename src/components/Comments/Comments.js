@@ -68,7 +68,7 @@ class Comments extends Component {
             variant="outlined"
             multiline
             rowsMax="5"
-            // value={this.state.comments}
+            placeholder="Leave comment..."
           /><br />
           <Button variant="outlined" type="submit">
             SUBMIT
