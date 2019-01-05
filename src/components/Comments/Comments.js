@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import styles from '../muiStyles';
+import classNames from 'classnames';
 
 // Material-UI
 import TextField from '@material-ui/core/TextField';
@@ -54,7 +55,7 @@ class Comments extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Paper className={classes.paper}>
+      <Paper className={classNames({[classes.paper]: true, ["scale-in-center"]: true})}>
         <Typography variant='h6'>4 of 4</Typography>
         <Typography variant='h5'>Any comments you want to leave?</Typography>
         <form onSubmit={this.handleClick}>

@@ -7,7 +7,7 @@ const styles = {
   },
   paper: {
     margin: 'auto',
-    width: '500px',
+    width: '75%',
     padding: '25px',
     backgroundColor: '#EAE6DA'
   },

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from '../muiStyles';
+import classNames from 'classnames';
 
 // Material-UI
 import TextField from '@material-ui/core/TextField';
@@ -37,7 +38,7 @@ class Supported extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Paper className={classes.paper}>
+      <Paper className={classNames({[classes.paper]: true, ["scale-in-center"]: true})}>
         <Typography variant='h6'>3 of 4</Typography>
         <Typography variant='h5'>How well are you being supported?</Typography>
         <form onSubmit={this.handleClick}>

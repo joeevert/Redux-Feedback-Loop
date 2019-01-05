@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from '../muiStyles';
+import classNames from 'classnames';
 
 // mui
-// import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import Paper from '@material-ui/core/Paper';
@@ -42,19 +42,10 @@ class HowAreYouFeeling extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Paper className={classes.paper}>
+      <Paper className={classNames({[classes.paper]: true, ["scale-in-center"]: true})}>
         <Typography variant='h6'>1 of 4</Typography>
         <Typography variant='h5'>How are you feeling?</Typography>
         <form onSubmit={this.handleClick}>
-          {/* <TextField
-            className={classes.input}
-            type="number"
-            name="feeling"
-            required
-            onChange={this.handleChange} 
-            value={this.state.feeling}
-            variant="outlined"
-          /><br /> */}
           <div className={classes.root}>
             <FormControl component="fieldset" className={classes.formControl}>
               <RadioGroup
@@ -64,7 +55,6 @@ class HowAreYouFeeling extends Component {
                 row
               >
                 <FormControlLabel
-                
                   value="very stressed"
                   control={<Radio color="primary" required/>}
                   label="Very Stressed"
