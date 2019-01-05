@@ -8,7 +8,7 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = {
   header: {
     backgroundColor: '#485167',
-    marginBottom: '50px'
+    marginBottom: '100px'
   },
   mainTitle: {
     color: '#fff',

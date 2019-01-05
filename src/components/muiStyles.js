@@ -1,8 +1,14 @@
 const styles = {
+  root: {
+    display: 'flex',
+  },
+  formControl: {
+    margin: 'auto',
+  },
   paper: {
     margin: 'auto',
-    width: '500px',
-    padding: '50px',
+    width: '75%',
+    padding: '25px',
     backgroundColor: '#EAE6DA'
   },
   input: {
@@ -16,3 +22,4 @@ const styles = {
 }
 
 export default styles;
+

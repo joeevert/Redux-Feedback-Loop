@@ -31,14 +31,14 @@ Before you get started, make sure you have the following software installed:
 CREATE DATABASE "prime_feedback";
 
 CREATE TABLE "feedback" (
-  "id" serial primary key,
-  "feeling" INT not null,
-  "understanding" INT not null,
-  "support" INT not null,
-  "comments" text,
-  "flagged" boolean default false,
-  "date" date not null default CURRENT_DATE
-);
+  "id" SERIAL PRIMARY KEY,
+  "feeling" VARCHAR(20) NOT NULL,
+  "understanding" VARCHAR(20) NOT NULL,
+  "support" VARCHAR(20) NOT NULL,
+  "comments" VARCHAR(200) NOT NULL,
+  "flagged" BOOLEAN DEFAULT FALSE,
+  "date" DATE DEFAULT CURRENT_DATE
+); 
 ```
 
 ### Installing

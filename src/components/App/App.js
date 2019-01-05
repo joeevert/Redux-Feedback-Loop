@@ -11,6 +11,7 @@ import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Complete from '../Complete/Complete';
 import Admin from '../Admin/Admin';
+// import RadioButtonsGroup from '../HowAreYouFeeling/test'
 // import { Link } from 'react-router-dom';
 
 class App extends Component {
@@ -19,7 +20,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Router>
-          <div className="App">
+          <div>
             <Route exact path="/" component= {HowAreYouFeeling} />
             <Route path="/2" component= {DidYouUnderstand} />
             <Route path="/3" component= {Supported} />

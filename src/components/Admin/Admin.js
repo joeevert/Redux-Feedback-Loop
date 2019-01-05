@@ -25,7 +25,7 @@ const CustomTableCell = withStyles({
 
 const styles = ({
   table: {
-    maxWidth: '700px',
+    maxWidth: '9a00px',
     margin: 'auto',
   },
   row: {

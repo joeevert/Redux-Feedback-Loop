@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import styles from '../muiStyles';
+import classNames from 'classnames';
 
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -9,7 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 class Complete extends Component {
 
-  // click handler for Leave New Feedback button - will proceed to 'how are you feeling?' (view #1)
+  // loops back to view #1
   handleClick = () => {
     console.log('in handleClick, Leave New Feedback');
     this.props.history.push('/');
@@ -18,7 +19,7 @@ class Complete extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Paper className={classes.paper}>
+      <Paper className={classNames({[classes.paper]: true, ["scale-in-center"]: true})}>
         <Typography variant='h5'>Thank You!</Typography>
         <Button
           variant="outlined" 
